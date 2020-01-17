@@ -27,7 +27,7 @@ conda install -y sqlalchemy psycopg2
 I am assuming you can create tables in postgres and import the data as shown: 
 
 <p align="center">
-  <img width="460" height="300" src="Images/importcsv.png">
+  <img width="460" height="300" src="Images/ImportCSV.png">
 </p>
 
 This has been done for all 23 csv's. 
