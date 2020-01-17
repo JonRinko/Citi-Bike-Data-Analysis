@@ -3,7 +3,7 @@
   <img width="460" height="300" src="Images/citipic1.jpg">
 </p>
 
-For this project, we will be using SQLAlchemy, Postgres, Tableau and Python to perform analysis and hopefully create some nice visuals in addition to illuminating some of the hidden secrets of the Citi Bike data. 
+For this project, we will be using [SQLAlchemy](https://docs.sqlalchemy.org/en/13/), [Postgres](https://www.postgresql.org/), [Tableau](https://www.tableau.com/) and [Python](https://www.python.org/) to perform analysis and hopefully create some nice visuals in addition to illuminating some of the hidden secrets of the Citi Bike data. 
 The data and information about the data can be found here: [Citi Bike Data](https://www.citibikenyc.com/system-data)
 
 I downloaded the 2018 and 2019 data for analysis, and since December 2019 is not available yet, I will be using 23 csv files initially. 
