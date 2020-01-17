@@ -23,7 +23,12 @@ Both of these packages can be installed from the command line with pip or conda:
 
 pip install sqlalchemy psycopg2
 conda install -y sqlalchemy psycopg2
- 
+
+I am assuming you can create tables in postgres and import the data as shown: 
+
+![Data]('Images/ImportCSV.png')
+
+This has been done for all 23 csv's. 
 
 Ok, we're all set. Let's take this data for a ride! 
     

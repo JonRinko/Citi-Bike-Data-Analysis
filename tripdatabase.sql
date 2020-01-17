@@ -1,85 +1,25 @@
--- removing varchar datatype contraint on street name columns
--- repeated for all tables although probably easier with for loop or a better statement
-ALTER TABLE dec_2018
-ALTER COLUMN start_station_name TYPE varchar,
-ALTER COLUMN end_station_name TYPE varchar;
+-- primary key id check (we need it here)
+-- csv file name check (we don't need it)
+SELECT * FROM september_2019;
+-- copied the table
+CREATE TABLE cumulative AS TABLE september_2019 WITH NO DATA;
+SELECT * FROM cumulative;
 
--- show all table names 
-SELECT * FROM
-   pg_catalog.pg_tables
-WHERE
-   schemaname != 'pg_catalog'
-AND schemaname != 'information_schema';
-
--- select some table data to test imports/dates
-SELECT * FROM january_2018
-LIMIT 10;
-
-SELECT * FROM january_2019
-LIMIT 10;
-
-SELECT * FROM feb_2018
-LIMIT 10;
-
-SELECT * FROM feb_2019
-LIMIT 10;
-
-SELECT * FROM march_2018
-LIMIT 10;
-
-SELECT * FROM march_2019
-LIMIT 10;
-
-SELECT * FROM april_2018
-LIMIT 10;
-
-SELECT * FROM april_2019
-LIMIT 10;
-
-SELECT * FROM may_2018
-LIMIT 10;
-
-SELECT * FROM may_2019
-LIMIT 10;
-
-SELECT * FROM june_2018
-LIMIT 10;
-
-SELECT * FROM june_2019
-LIMIT 10;
-
-SELECT * FROM july_2018
-LIMIT 10;
-
-SELECT * FROM july_2019
-LIMIT 10;
-
-SELECT * FROM august_2018
-LIMIT 10;
-
-SELECT * FROM august_2019
-LIMIT 10;
-
-SELECT * FROM september_2018
-LIMIT 10;
-
-SELECT * FROM september_2019
-LIMIT 10;
-
-SELECT * FROM october_2018
-LIMIT 10;
-
-SELECT * FROM october_2019
-LIMIT 10;
-
-SELECT * FROM nov_2018
-LIMIT 10;
-
-SELECT * FROM nov_2019
-LIMIT 10;
-
-SELECT * FROM dec_2018
-LIMIT 10;
+-- primary key id add
+ALTER TABLE cumulative
+ADD COLUMN id SERIAL NOT NULL;
 
 
---  TODO: Merge all 2018 tables and 2019 tables
+ALTER TABLE cumulative ADD PRIMARY KEY (id);
+
+-- modify order of table by re-creating it
+
+SELECT * FROM cumulative;
+-- insert data from direct import
+INSERT INTO public.cumulative(
+	tripduration, starttime, stoptime, start_station_id, start_station_name, start_station_latitude, start_station_longitude, end_station_id, end_station_name, end_station_latitude, end_station_longitudem, bikeid, usertype, birth_year, gender)
+	 (SELECT * FROM april_2018);
+
+INSERT INTO public.cumulative(
+	tripduration, starttime, stoptime, start_station_id, start_station_name, start_station_latitude, start_station_longitude, end_station_id, end_station_name, end_station_latitude, end_station_longitudem, bikeid, usertype, birth_year, gender)
+	 (SELECT * FROM april_2018);
