@@ -30,9 +30,17 @@ I am assuming you can create tables in postgres and import the data as shown:
   <img width="460" height="300" src="https://github.com/JonRinko/Citi-Bike-Data-Analysis/blob/master/Images/ImportCSV.PNG">
 </p>
 
-This has been done for all 23 csv's. 
+This has been done for all 23 csv's from Jan 2018- Nov 2019, making this a BIG dataset. (over 19 million rows to be exact)
 
 Ok, we're all set. Let's take this data for a ride! 
+
+
+### The final visuals can be seen here: 
+[Tableau](https://public.tableau.com/profile/jon4546#!/vizhome/CitiBikeStartStationTripCountsDashboard/Dashboard1?publish=yes)
+
+This is created an an open source project, so feel free to fork or clone this repo. 
+
+Thank you! 
     
         
  
