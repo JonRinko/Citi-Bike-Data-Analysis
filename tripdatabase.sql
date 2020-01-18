@@ -49,9 +49,7 @@ SELECT * FROM newbikes
 LIMIT 10;
 
 SELECT reltuples AS approximate_row_count FROM pg_class WHERE relname = 'newbikes';
-
-SELECT 
-							
+					
 
 		
 SELECT ss.count,
@@ -73,11 +71,41 @@ SELECT * FROM start_stations_with_cords
 ORDER BY count desc
 LIMIT 10;
 
-DROP TABLE start_stations_with_cords;
-							
-							
-							
-							
+SELECT COUNT(id), gender
+INTO gender_counts
+FROM newbikes
+GROUP BY gender
+ORDER BY COUNT(id) desc;		
+
+SELECT * FROM gender_counts
+LIMIT 10;
+					
+SELECT COUNT(id), 2020 - birth_year as age
+INTO trips_per_age
+FROM newbikes
+WHERE 2020 - birth_year <= 117
+GROUP BY age
+ORDER BY COUNT(id) desc;
+
+select EXTRACT(year FROM age('1995-08-04'::date))::int age 
+
+DROP table trips_per_age;
+
+SELECT birth_year 
+from newbikes
+GROUP BY age
+WHERE age <= 117
+LIMIT 20;
+
+ALTER TABLE newbikes
+ALTER COLUMN birth_year TYPE integer
+USING birth_year::integer;
+
+select * from trips_per_age
+ORDER BY age desc
+limit 10;
+
+
 							
 							
 							
