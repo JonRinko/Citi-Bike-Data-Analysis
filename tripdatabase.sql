@@ -106,6 +106,65 @@ ORDER BY age desc
 limit 10;
 
 
+SELECT SUM(tripduration), 2020 - birth_year as age
+INTO age_durations
+FROM newbikes
+GROUP BY age
+ORDER BY SUM(tripduration) desc;
+
+SELECT * FROM age_durations;
+
+SELECT * FROM trips_per_age;
+-- join on age
+
+SELECT ta.age, ta.count, ad.sum
+INTO age_count_and_duration
+FROM trips_per_age as ta
+INNER JOIN age_durations as ad
+ON ta.age = ad.age
+GROUP BY ta.count, ta.age,
+ad.sum;
+
+SELECT * FROM age_count_and_duration
+ORDER BY SUM desc;
+
+DELETE FROM newbikes
+WHERE 2020 - birth_year >117;
+
+SELECT * from gender_counts
+limit 10;
+-- join with sum by gender
+
+SELECT SUM(tripduration), gender
+INTO gender_durations
+FROM newbikes
+GROUP BY gender
+ORDER BY SUM(tripduration) desc;
+
+-- join
+SELECT * from gender_durations;
+SELECT * from gender_counts;
+
+SELECT gc.gender, gc.count, gd.sum
+INTO gender_count_and_duration
+FROM gender_counts as gc
+INNER JOIN gender_durations as gd
+ON gc.gender = gd.gender
+GROUP BY gc.count,
+gd.sum, gc.gender;
+
+SELECT * from gender_count_and_duration;
+-- same by user type
+
+-- can we see the percentages of men and women at each location? 
+--can we map that? 
+
+-- need start_station_coords, male %, female %, unk %
+-- end station_coords, % male, % female, % unk 
+-- can use totals from gender counts as denomination 
+-- % male = count gender where = '1'/total 
+
+
 							
 							
 							
