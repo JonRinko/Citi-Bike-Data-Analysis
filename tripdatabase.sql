@@ -164,8 +164,35 @@ SELECT * from gender_count_and_duration;
 -- can use totals from gender counts as denomination 
 -- % male = count gender where = '1'/total 
 
+-- lets see gender by usertype 
+select * from newbikes
+limit 10;
 
-							
-							
+SELECT usertype, gender, count(gender)
+into prelim_usercounts
+from newbikes
+group by usertype, gender
+order by usertype desc;
+															  
+
+-- zoom = usertype 
+-- amount = count
+
+SELECT usertype,
+       count(usertype) as amount,
+       ( amount / Cast(Sum(amount) OVER(partition BY usertype) AS FLOAT) ) * 100 as percentage
+FROM   (SELECT usertype,
+               Count(*) AS amount
+        FROM   newbikes
+        GROUP  BY usertype) a;
+															  
+SELECT zoom,x,y,
+       amount,
+       ( amount / Cast(Sum(amount) OVER(partition BY zoom) AS FLOAT) ) * 100 as amt_percentage
+FROM   (SELECT zoom,x, y,
+               Count(*) AS amount
+        FROM   percentage
+        GROUP  BY zoom,x,y) a
+
 							
 							
