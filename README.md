@@ -50,14 +50,14 @@ Ok, we're all set. Let's analyze this data!
 [Oldest Living People](https://en.wikipedia.org/wiki/List_of_the_oldest_living_people).       
 <br>
 2. There are many null values, which were excluded from the visualizations, and they seem to be clustered in the same geographical location, indicating these may be caused by a maintenance or testing facility or the animals at the bronx zoo stole a few bikes and neatly lined them up in a checkerboard pattern. Hey, I'm not ready to rule out any hypothesis.  
-<img width="300" height="300" src="Images/strangeNulls.PNG">    
-<br>
-3. There are many illogical trip durations exceeding 1 day, which may be an indication of stolen or forgotten bikes, improper returns something else entirely.  
-<br>
-4. It was interesting to see that male 51 year olds make up the largest rider group, and that females are disproportionately represented in both customer and subscriber categories. This has often been attributed to a lack of security, fear of harrassment/being a victim of a crime or difficulty carrying children or items such as purses.  
-<br>
-5. Also, we can see that the subscription program has been quite a success.  
-<br>
+<img width="300" height="300" src="Images/strangeNulls.PNG">      
+<br>  
+3. There are many illogical trip durations exceeding 1 day, which may be an indication of stolen or forgotten bikes, improper returns something else entirely.    
+<br>  
+4. It was interesting to see that male 51 year olds make up the largest rider group, and that females are disproportionately represented in both customer and subscriber categories. This has often been attributed to a lack of security, fear of harrassment/being a victim of a crime or difficulty carrying children or items such as purses.    
+<br>  
+5. Also, we can see that the subscription program has been quite a success.    
+<br>  
 This project may evole in time, but for now this was just intended to be a quick analysis to demonstrate Tableau, SQL and to explore the NYC Citi Bike Data.         
 <br>  
     
