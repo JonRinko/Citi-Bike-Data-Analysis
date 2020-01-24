@@ -1,4 +1,7 @@
-## Citi Bike Data Analysis 
+## Citi Bike Data Analysis   
+<br> 
+Analysis By Jonathan Rinko  
+<br> 
 <p align="center">
   <img width="460" height="300" src="Images/citipic1.jpg">
 </p>
@@ -45,7 +48,7 @@ Ok, we're all set. Let's analyze this data!
 
 ### Interesting Phenomenom discovered: 
 1. According to the data, there are riders older than any living human 
-[Oldest Humans](https://en.wikipedia.org/wiki/List_of_the_verified_oldehttp://localhost:8888/notebooks/Images/UTbyGender.PNGst_people) 
+[Oldest Living People](https://en.wikipedia.org/wiki/List_of_the_oldest_living_people) 
 Clearly there are some issues with the way Citi records age data.   
 <br>
 2. There are many null values, which were excluded from the visualizations, and they seem to be clustered in the same geographical location, indicating these may be caused by a maintenance or testing facility or the animals at the bronx zoo stole a few bikes and neatly lined them up in a checkerboard pattern. Hey, I'm not ready to rule out any hypothesis.  
