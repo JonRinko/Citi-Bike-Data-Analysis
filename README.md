@@ -24,7 +24,7 @@ Both of these packages can be installed from the command line with pip or conda:
 pip install sqlalchemy psycopg2
 conda install -y sqlalchemy psycopg2
 
-I am assuming you can create tables in postgres and import the data as shown: 
+I will be creating simple tables in pgAdmin to be manipulated with SQL in Postgres or using SQLalchemy.  
 
 <p align="center">
   <img width="460" height="300" src="https://github.com/JonRinko/Citi-Bike-Data-Analysis/blob/master/Images/ImportCSV.PNG">
@@ -32,15 +32,29 @@ I am assuming you can create tables in postgres and import the data as shown:
 
 This has been done for all 23 csv's from Jan 2018- Nov 2019, making this a BIG dataset. (over 19 million rows to be exact)
 
-Ok, we're all set. Let's take this data for a ride! 
+Ok, we're all set. Let's analyze this data! 
 
 
 ### The final visuals can be seen here: 
-[Tableau](https://public.tableau.com/profile/jon4546#!/vizhome/CitiBikeStartStationTripCountsDashboard/Dashboard1?publish=yes)
+[TableauDashboard](https://public.tableau.com/profile/jon4546#!/vizhome/CitiBikeStartStationTripCountsDashboard/Dashboard1?publish=yes)
+[Dashboard2](https://public.tableau.com/profile/jon4546#!/vizhome/UsertypeByGender/Dashboard1)
 
-This is created an an open source project, so feel free to fork or clone this repo. 
 
-Thank you! 
+### Conclusions: 
+
+### Interesting Phenomenom discovered: 
+1. According to the data, there are riders older than any living human [Oldest Humans]
+(https://en.wikipedia.org/wiki/List_of_the_verified_oldehttp://localhost:8888/notebooks/Images/UTbyGender.PNGst_people) 
+Clearly there are some issues with the way Citi records age data.   
+<br>
+2. There are many null values, which were excluded from the visualizations, and they seem to be clustered in the same geographical location, indicating these may be caused by a maintenance or testing facility or the animals at the bronx zoo stole a few bikes and neatly lined them up in a checkerboard pattern. Hey, I'm not ready to rule out any hypothesis.  
+<img width="300" height="300" src="Images/strangeNulls.PNG">  
+<br>
+3. There are many illogical trip durations exceeding 1 day, which may be an indication of stolen or forgotten bikes, improper returns something else entirely.  
+<br>
+4. It was interesting to see that male 51 year olds make up the largest rider group, and that females are disproportionately represented in both customer and subscriber categories. This has often been attributed to a lack of security, fear of harrassment/being a victim of a crime or difficulty carrying children or items such as purses.  
+<br>
+5. Also, we can see that the subscription program has been quite a success.
     
         
  

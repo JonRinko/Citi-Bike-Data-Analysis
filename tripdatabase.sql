@@ -168,31 +168,24 @@ SELECT * from gender_count_and_duration;
 select * from newbikes
 limit 10;
 
-SELECT usertype, gender, count(gender)
-into prelim_usercounts
+SELECT usertype, gender, count(gender) as trip_counts,  (count(tripduration)/60) as "duration (min)"
+into usercounts
 from newbikes
 group by usertype, gender
 order by usertype desc;
-															  
-
+				
+drop table usercounts;
+select * from usercounts;
 -- zoom = usertype 
 -- amount = count
 
-SELECT usertype,
-       count(usertype) as amount,
-       ( amount / Cast(Sum(amount) OVER(partition BY usertype) AS FLOAT) ) * 100 as percentage
-FROM   (SELECT usertype,
-               Count(*) AS amount
-        FROM   newbikes
-        GROUP  BY usertype) a;
-															  
-SELECT zoom,x,y,
-       amount,
-       ( amount / Cast(Sum(amount) OVER(partition BY zoom) AS FLOAT) ) * 100 as amt_percentage
-FROM   (SELECT zoom,x, y,
-               Count(*) AS amount
-        FROM   percentage
-        GROUP  BY zoom,x,y) a
+SELECT usertype, gender, count as trips, 
+       ( trips / Cast(Sum(trips) OVER(partition BY usertype) AS FLOAT) ) * 100 as percentage
+FROM   (SELECT usertype, gender, count,
+               Count(*) AS trips
+        FROM   prelim_usercounts
+        GROUP  BY usertype, gender, count) a;
+															 
 
 							
 							
